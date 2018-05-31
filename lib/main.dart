@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'pages/view_video_page.dart';
+import 'pages/view_video_page/view_video_page.dart';
 
 void main() => runApp(new MyApp());
 
