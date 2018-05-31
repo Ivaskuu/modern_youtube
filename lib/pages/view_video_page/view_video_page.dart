@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'video_card.dart';
+import 'comments_card.dart';
 
 class ViewVideoPage extends StatefulWidget {
   @override
@@ -46,7 +47,8 @@ class _ViewVideoPageState extends State<ViewVideoPage> {
             SliverList(
               delegate: SliverChildListDelegate(
                 [
-                  VideoCard()
+                  VideoCard(),
+                  CommentsCard(),
                 ]
               ),
             )
