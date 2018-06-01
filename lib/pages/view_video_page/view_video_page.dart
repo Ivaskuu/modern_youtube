@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'video_card.dart';
+import 'package:flutter/src/foundation/diagnostics.dart';
+import 'video_infos_card.dart';
 import 'comments_card.dart';
+import 'video_player.dart';
 
 class ViewVideoPage extends StatefulWidget {
   @override
@@ -14,7 +16,22 @@ class _ViewVideoPageState extends State<ViewVideoPage> {
       backgroundColor: Color(0xFFF0F0F0),
       body: Container(
         margin: EdgeInsets.only(top: 16.0),
-        child: CustomScrollView(
+        child: Stack(
+          children: <Widget>[
+            ListView(
+              padding: EdgeInsets.all(0.0),
+              children: <Widget>[
+                VideoInfosCard(),
+                CommentsCard()
+              ],
+            ),
+            VideoPlayer()
+          ],
+        ),
+        
+        
+        
+        /* CustomScrollView(
           slivers: <Widget>[
             SliverAppBar(
               backgroundColor: Colors.transparent,
@@ -44,16 +61,23 @@ class _ViewVideoPageState extends State<ViewVideoPage> {
                 ),
               ),
             ),
+            SliverToBoxAdapter(
+              child: Stack(
+                children: <Widget>[
+                  VideoCard(),
+                  ElevatedCard(SizedBox.fromSize(size: Size.fromHeight(180.0)), color: videoBgColor),
+                ]
+              )
+            ),
             SliverList(
               delegate: SliverChildListDelegate(
                 [
-                  VideoCard(),
                   CommentsCard(),
                 ]
               ),
             )
           ],
-        ),
+        ), */
       )
     );
   }
