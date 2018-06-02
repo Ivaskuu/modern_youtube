@@ -7,8 +7,8 @@ class VideoPlayer extends StatefulWidget {
 }
 
 class _VideoPlayerState extends State<VideoPlayer> {
-  final Color videoBgColor = Color(0xFF010E23);
-  
+  Color get videoBgColor => Color(0xFF010E23);
+
   @override
   Widget build(BuildContext context) {
     return ElevatedCard(
